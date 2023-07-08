@@ -4,7 +4,9 @@ import nodemailer from 'nodemailer';
 
 const router = express.Router();
 
-router.get('/',(req,res)=>res.send({message:"Im working"}))
+router.get('/',(req,res)=>{
+res.status(200).json({message:"Im working"})
+})
 
 router.get('/node',async(req,res)=>{
     let transporter = nodemailer.createTransport({
